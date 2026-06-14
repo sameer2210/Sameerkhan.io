@@ -1,58 +1,78 @@
-import React from "react";
+"use client";
+import { motion } from "framer-motion";
 import { workExperience } from "@/data";
-import { Button } from "./ui/MovingBorders";
-import Image from "next/image";
 
-const Experience = () => {
-  return (
-    <div className="py-20 w-full">
-      <h2 className="heading">
-        My work<span className="text-purple"> experience</span>
-      </h2>
-
-      <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
-        {workExperience.map((card) => (
-          <Button
-            key={card.id}
-            duration={Math.floor(Math.random() * 10000) + 10000}
-            borderRadius="1.75rem"
-            style={{
-              backgroundColor: "rgb(4,7,29)",
-              backgroundImage:
-                "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-              borderRadius: `calc(1.75rem* 0.96)`,
-            }}
-            className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-          >
-            <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
-              {/* Image Container with proper dimensions */}
-              <div className="relative flex-shrink-0">
-                <div className="lg:w-32 lg:h-32 md:w-20 md:h-20 w-16 h-16 relative">
-                  <Image
-                    src={card.thumbnail}
-                    alt={`${card.title} company logo`}
-                    fill
-                    sizes="(max-width: 768px) 64px, (max-width: 1024px) 80px, 128px"
-                    className="object-contain rounded-lg"
-                    priority={card.id <= 4} // Prioritize first 4 images
-                  />
-                </div>
-              </div>
-
-              <div className="lg:ms-5 flex-1">
-                <h3 className="text-start text-xl md:text-2xl font-bold">
-                  {card.title}
-                </h3>
-                <p className="text-start text-white-100 mt-3 font-semibold">
-                  {card.desc}
-                </p>
-              </div>
-            </div>
-          </Button>
-        ))}
-      </div>
-    </div>
-  );
+const badges: Record<number, { label: string; color: string }> = {
+  1: { label: "Full-time", color: "text-purple/80 border-purple/30" },
+  2: { label: "Internship", color: "text-white/40 border-white/10" },
+  3: { label: "Freelance", color: "text-white/40 border-white/10" },
 };
 
-export default Experience;
+export default function Experience() {
+  return (
+    <section className="py-20 w-full" id="experience">
+      <div className="max-w-3xl">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-white/30 text-xs tracking-[0.25em] uppercase font-mono mb-4"
+        >
+          /02 — experience
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="text-3xl md:text-5xl font-bold text-white leading-tight mb-16"
+        >
+          Where I&apos;ve worked
+        </motion.h2>
+      </div>
+
+      <div className="flex flex-col divide-y divide-white/[0.06]">
+        {workExperience.map((exp, index) => {
+          const [role, company] = exp.title.split(" | ");
+          const badge = badges[exp.id];
+          return (
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="group py-10 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 md:gap-12 cursor-default"
+            >
+              {/* Left — role meta */}
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-white/20 text-xs font-mono tabular-nums">
+                    0{index + 1}
+                  </span>
+                  <span
+                    className={`text-[11px] font-semibold tracking-widest uppercase px-2.5 py-0.5 rounded border ${badge.color}`}
+                  >
+                    {badge.label}
+                  </span>
+                </div>
+                <h3 className="text-white font-semibold text-lg leading-snug group-hover:text-purple transition-colors duration-300">
+                  {role}
+                </h3>
+                {company && (
+                  <p className="text-white/40 text-sm">{company}</p>
+                )}
+              </div>
+
+              {/* Right — description */}
+              <p className="text-white/55 text-sm md:text-base leading-relaxed self-center">
+                {exp.desc}
+              </p>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}

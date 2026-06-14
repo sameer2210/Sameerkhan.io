@@ -1,6 +1,7 @@
 "use client";
-import { FaLocationArrow } from "react-icons/fa6";
+import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 
@@ -59,32 +60,64 @@ const Hero = () => {
       </div>
 
       <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center"
+        >
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80"
+          >
             Full Stack Web Developer Portfolio
-          </p>
-          <h1 className="text-center text-4xl md:text-6xl lg:text-7xl font-bold mt-4">
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-center text-4xl md:text-6xl lg:text-7xl font-bold mt-4"
+          >
             Sameer Khan
-          </h1>
-          <div aria-hidden="true">
+          </motion.h1>
+          <span className="sr-only">I Build Awesome Web Applications</span>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            aria-hidden="true"
+          >
             <TypewriterEffect
               className="text-center md:text-5xl lg:text-6xl my-5"
               words={words}
             />
-          </div>
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Full stack web developer in Bhopal, building scalable MERN and
-            Next.js applications.
-          </p>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl"
+          >
+            Full-stack Developer | Software Engineer · React · Next.js · Node.js | Java | Javascript | Typescript | AWS | Building Scalable Web Apps |
+          </motion.p>
 
-          <a href="#projects" className="cursor-pointer">
+          <motion.a
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.0, duration: 0.5 }}
+            href="#projects"
+            className="cursor-pointer"
+          >
             <MagicButton
               title="See my work"
               icon={<FaLocationArrow />}
               position="right"
+              as="span"
             />
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </div>
   );

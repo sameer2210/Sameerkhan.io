@@ -30,16 +30,25 @@ export const PinContainer = ({
   return (
     <div
       className={cn(
-        "relative group/pin z-50  cursor-pointer",
+        "relative group/pin z-50  cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black-100 rounded-3xl",
         containerClassName
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      //href={href || "/"}
+      tabIndex={0}
+      role="link"
+      aria-label={`View project details for ${title}`}
       onClick={(event) => {
         event.preventDefault();
         if (!href) return;
         window.open(href, "_blank", "noopener,noreferrer");
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          if (!href) return;
+          window.open(href, "_blank", "noopener,noreferrer");
+        }
       }}
     >
       <div

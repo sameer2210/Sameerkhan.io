@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { projects } from "@/data";
+import { appProjects } from "@/data";
 import { PinContainer } from "./ui/PinContainer";
 import { FaLocationArrow } from "react-icons/fa";
 
@@ -10,7 +10,7 @@ const getTechName = (path: string) => {
   const nameMap: Record<string, string> = {
     js: "JavaScript",
     ts: "TypeScript",
-    react: "React",
+    react: "React Native",
     next: "Next.js",
     nextjs: "Next.js",
     node: "Node.js",
@@ -35,14 +35,14 @@ const getTechName = (path: string) => {
   return nameMap[file] || file.charAt(0).toUpperCase() + file.slice(1);
 };
 
-const RecentProjects = () => {
+const AppProjects = () => {
   return (
-    <div className="py-10" id="projects">
+    <div className="py-10" id="apps">
       <h2 className="heading">
-        A small selection of <span className="text-purple">recent projects</span>
+        My featured <span className="text-purple">mobile apps</span>
       </h2>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-20 gap-y-16 sm:gap-y-8">
-        {projects.map(({ id, title, des, img, iconLists, link }) => (
+        {appProjects.map(({ id, title, des, img, iconLists, link }) => (
           <div
             key={id}
             className="min-h-[28rem] sm:min-h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
@@ -63,7 +63,7 @@ const RecentProjects = () => {
                 </div>
                 <Image
                   src={img}
-                  alt={`${title} project preview`}
+                  alt={`${title} app preview`}
                   fill
                   sizes="(max-width: 640px) 80vw, 570px"
                   className="z-10 absolute bottom-0 object-contain"
@@ -101,7 +101,7 @@ const RecentProjects = () => {
                 </div>
 
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm ">Live</p>
+                  <p className="flex lg:text-xl md:text-xs text-sm ">View Source</p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>
               </div>
@@ -113,4 +113,4 @@ const RecentProjects = () => {
   );
 };
 
-export default RecentProjects;
+export default AppProjects;

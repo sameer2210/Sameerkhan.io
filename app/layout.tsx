@@ -4,7 +4,12 @@ import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { siteConfig, siteUrl } from "@/lib/seo";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-inter",
+});
 
 const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
 
@@ -93,11 +98,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${inter.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}

@@ -69,15 +69,28 @@ export const BentoGridItem = ({
     }
   };
 
+  const isLinkCard = link && id !== 1;
+  const Component = isLinkCard ? 'a' : 'div';
+  const extraProps = isLinkCard
+    ? {
+        href: link,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        'aria-label': `Explore ${title}`,
+      }
+    : {};
+
   return (
-    <div
+    <Component
       className={cn(
-        'row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4',
+        'row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black-100',
+        isLinkCard && 'cursor-pointer hover:border-purple/50',
         className
       )}
       style={{
         background: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
       }}
+      {...extraProps}
     >
       <div className="w-full h-full absolute">
         {img && (
@@ -90,7 +103,7 @@ export const BentoGridItem = ({
           />
         )}
       </div>
-      <div className={`absolute right-0 -bottom-5 ${id === 2 && 'w-full opacity-80'} `}>
+      <div className={cn("absolute right-0 -bottom-5 w-full h-full", id === 2 ? "opacity-80" : "opacity-40")}>
         {spareImg && (
           <Image
             src={spareImg}
@@ -142,7 +155,7 @@ export const BentoGridItem = ({
               </div>
               {link && (
                 <a href={link} target="_blank" rel="noopener noreferrer">
-                  <LitupButton name="View Resume" />
+                  <LitupButton name="View Resume" as="span" />
                 </a>
               )}
             </div>
@@ -152,11 +165,11 @@ export const BentoGridItem = ({
         {id === 5 && link && (
           <div className="mt-5 z-10 relative">
             <a href={link} target="_blank" rel="noopener noreferrer">
-              <LitupButton name="Visit GitHub" />
+              <LitupButton name="Visit GitHub" as="span" />
             </a>
           </div>
         )}
       </div>
-    </div>
+    </Component>
   );
 };

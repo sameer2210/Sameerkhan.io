@@ -1,66 +1,131 @@
 "use client";
 
+import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
+import { motion } from "framer-motion";
+import {
+  AboutSkeleton,
+  ExperienceSkeleton,
+  SkillsSkeleton,
+  ProjectsSkeleton,
+  TestimonialsSkeleton,
+} from "@/components/ui/Skeleton";
 
-const Grid = dynamic(() => import("@/components/Grid"), {
-  loading: () => <SectionFallback minHeight="22rem" label="Loading profile overview..." />,
-});
+// ─── Dynamic Imports (Code Splitting) ───────────────────────────────────────
+// Each section is a separate JS chunk — browser only downloads it when needed.
+// The `loading` prop feeds the Skeleton while the chunk is in-flight.
 
-const Skills = dynamic(() => import("@/components/Skills"), {
-  loading: () => <SectionFallback minHeight="24rem" label="Loading skills..." />,
-});
-
-const RecentProjects = dynamic(() => import("@/components/RecentProjects"), {
-  loading: () => <SectionFallback minHeight="30rem" label="Loading projects..." />,
+const About = dynamic(() => import("@/components/About"), {
+  loading: () => <AboutSkeleton />,
 });
 
 const Experience = dynamic(() => import("@/components/Experience"), {
-  loading: () => <SectionFallback minHeight="24rem" label="Loading experience..." />,
+  loading: () => <ExperienceSkeleton />,
+});
+
+const Skills = dynamic(() => import("@/components/Skills"), {
+  loading: () => <SkillsSkeleton />,
+  ssr: false, // IconCloud uses browser APIs — skip server render
+});
+
+const RecentProjects = dynamic(() => import("@/components/RecentProjects"), {
+  loading: () => <ProjectsSkeleton />,
+});
+
+const AppProjects = dynamic(() => import("@/components/AppProjects"), {
+  loading: () => <ProjectsSkeleton />,
 });
 
 const Approach = dynamic(() => import("@/components/Approach"), {
-  loading: () => <SectionFallback minHeight="24rem" label="Loading approach..." />,
+  loading: () => <div className="py-20 h-64 animate-pulse" />,
 });
 
 const Clients = dynamic(() => import("@/components/Client"), {
-  loading: () => <SectionFallback minHeight="20rem" label="Loading testimonials..." />,
+  loading: () => <TestimonialsSkeleton />,
 });
 
 const Footer = dynamic(() => import("@/components/Footer"), {
-  loading: () => <SectionFallback minHeight="16rem" label="Loading contact section..." />,
+  loading: () => <div className="h-64" />,
 });
 
-function SectionFallback({ minHeight, label }: { minHeight: string; label: string }) {
+// ─── Below-fold reveal animation ────────────────────────────────────────────
+function Reveal({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-full flex items-center justify-center" style={{ minHeight }}>
-      <p className="text-sm text-white-100">{label}</p>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
+// ─── Page ────────────────────────────────────────────────────────────────────
 export default function HomeContent() {
   return (
     <div className="max-w-7xl w-full">
       <FloatingNav navItems={navItems} />
 
+      {/* Hero — no Suspense, no reveal: must paint immediately */}
       <Hero />
 
-      <Grid />
+      {/*
+        Suspense Boundaries: each section is wrapped so React can stream
+        them independently. If one section's JS is slow, the rest still
+        render — they don't block each other.
+      */}
+      <Reveal>
+        <Suspense fallback={<AboutSkeleton />}>
+          <About />
+        </Suspense>
+      </Reveal>
 
-      <Skills />
+      <Reveal>
+        <Suspense fallback={<ExperienceSkeleton />}>
+          <Experience />
+        </Suspense>
+      </Reveal>
 
-      <RecentProjects />
+      <Reveal>
+        <Suspense fallback={<SkillsSkeleton />}>
+          <Skills />
+        </Suspense>
+      </Reveal>
 
-      <Experience />
+      <Reveal>
+        <Suspense fallback={<ProjectsSkeleton />}>
+          <RecentProjects />
+        </Suspense>
+      </Reveal>
 
-      <Approach />
+      <Reveal>
+        <Suspense fallback={<ProjectsSkeleton />}>
+          <AppProjects />
+        </Suspense>
+      </Reveal>
 
-      <Clients />
+      <Reveal>
+        <Suspense fallback={<div className="py-20 h-64" />}>
+          <Approach />
+        </Suspense>
+      </Reveal>
 
-      <Footer />
+      <Reveal>
+        <Suspense fallback={<TestimonialsSkeleton />}>
+          <Clients />
+        </Suspense>
+      </Reveal>
+
+      <Reveal>
+        <Suspense fallback={<div className="h-64" />}>
+          <Footer />
+        </Suspense>
+      </Reveal>
     </div>
   );
 }
