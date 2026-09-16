@@ -477,7 +477,7 @@ export const projects: ProjectDetail[] = [
       'Add grocery shopping list generator with export to PDF feature.',
     deployment: 'Static Single-Page Application deployed on Vercel.',
     businessImpact: 'Achieved 100/100 Lighthouse performance and accessibility scores with high user engagement.',
-    img: '/project/eato.png',
+    img: '/project/infantmind.png',
     iconLists: [
       '/icons/js.svg',
       '/icons/react.svg',
@@ -488,8 +488,8 @@ export const projects: ProjectDetail[] = [
       '/icons/git.svg',
       '/icons/github.svg',
     ],
-    link: 'https://recipe-create-pied.vercel.app/',
-    github: 'https://github.com/sameer2210',
+    link: 'https://www.infantmind.ai/',
+    github: 'https://github.com/sameer2210/infantmind.ai',
     category: 'Full Stack',
   },
 ];
