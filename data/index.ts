@@ -157,7 +157,7 @@ export const projects: ProjectDetail[] = [
     ],
     link: 'https://spandavidyaai.com/',
     github: 'https://github.com/sameer2210/SpandaVidyaAi-App',
-    category: 'AI Platform',
+    category: 'AI Platfor',
   },
   {
     id: 2,
