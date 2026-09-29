@@ -30,8 +30,6 @@ export const navItems = [
   { name: 'About', link: '#about' },
   { name: 'Experience', link: '#experience' },
   { name: 'Projects', link: '#projects' },
-  { name: 'Blog', link: '/blog' },
-  { name: 'FAQ', link: '#faq' },
   {
     name: 'Resume',
     link: 'https://drive.google.com/drive/folders/1gFWOYpLKE1Ppj7HpTV_lKFuqpDn2O2wY?usp=sharing',
@@ -157,7 +155,7 @@ export const projects: ProjectDetail[] = [
     ],
     link: 'https://spandavidyaai.com/',
     github: 'https://github.com/sameer2210/SpandaVidyaAi-App',
-    category: 'AI Platfor',
+    category: 'AI Platform',
   },
   {
     id: 2,
@@ -494,109 +492,6 @@ export const projects: ProjectDetail[] = [
   },
 ];
 
-export const appProjects: ProjectDetail[] = [
-  {
-    id: 1,
-    slug: 'spandavidya-ai-app',
-    title: 'SpandaVidya AI App',
-    des: 'AI-powered Ayurvedic Healthcare platform featuring chat-based Ayurvedic consultation and computer vision cataract detection.',
-    overview:
-      'Mobile application extension for SpandaVidya AI built with React Native for Android and iOS devices.',
-    problemStatement:
-      'Field health workers need a mobile native application capable of capturing high-quality ocular photos and operating in poor connectivity areas.',
-    architecture:
-      'React Native client with native bridge modules connecting to OpenCV PyTorch diagnostic APIs.',
-    databaseDesign:
-      'WatermelonDB / Async Storage local encrypted storage synced to MongoDB backend upon network reconnect.',
-    techStackDetailed: [
-      'React Native',
-      'TypeScript',
-      'Node.js',
-      'MongoDB',
-      'AWS ECS',
-    ],
-    features: [
-      'Camera-Based Ocular Scanning',
-      'AI Chat Consultation Interface',
-      'Offline Consultation History Storage',
-    ],
-    performanceMetrics: [
-      { label: 'App Size', value: '34MB' },
-      { label: 'Frame Rate', value: '60 FPS' },
-    ],
-    challenges: 'Capturing clear high-contrast ocular photos on varied mobile camera hardware.',
-    solutions: 'Built custom camera mask overlay with real-time brightness verification.',
-    api: 'REST API via HTTPS.',
-    security: 'Encrypted Async Storage and TLS 1.3 network communication.',
-    scalability: 'AWS auto-scaling container backend.',
-    lessonsLearned: 'Native camera overlays improve photo quality for AI vision models dramatically.',
-    futureRoadmap: 'Add offline model execution for basic cataract risk screening.',
-    deployment: 'Standalone APK & TestFlight iOS distribution.',
-    businessImpact: 'Allowed rural healthcare workers to conduct field screenings directly on smartphones.',
-    img: '/project/SpandaVidya-app.png',
-    iconLists: [
-      '/icons/react.svg',
-      '/icons/ts.svg',
-      '/icons/node.svg',
-      '/icons/mongo.svg',
-      '/icons/aws.svg',
-      '/icons/git.svg',
-      '/icons/github.svg',
-    ],
-    link: 'https://www.spandavidyaai.com/',
-    github: 'https://github.com/harshbairagi88/spandaVidya-website',
-    category: 'Mobile App',
-  },
-  {
-    id: 2,
-    slug: 'digiscanner-app',
-    title: 'DigiScanner App',
-    des: 'A powerful document scanning application. Capture, crop, and enhance documents seamlessly to digital format.',
-    overview:
-      'Android document scanning application enabling users to scan, perspective-correct, contrast-enhance, and compile documents into multi-page PDF files.',
-    problemStatement:
-      'Users need zero-privacy-risk document scanning that processes pages locally on-device without cloud upload dependencies.',
-    architecture:
-      'React Native application utilizing Android native C++ OpenCV image processing bindings.',
-    databaseDesign:
-      'Local File System PDF cache with SQLite metadata index.',
-    techStackDetailed: [
-      'React Native',
-      'TypeScript',
-      'Android Native OpenCV',
-      'PDF Compiler Engine',
-    ],
-    features: [
-      'Edge Detection & Perspective Crop Correction',
-      'Black & White Magic Color Filters',
-      'Multi-Page PDF Generation & Direct Share',
-    ],
-    performanceMetrics: [
-      { label: 'Processing Speed', value: '450ms / page' },
-      { label: 'PDF Compression', value: '70% smaller' },
-    ],
-    challenges: 'Real-time document edge detection under poor lighting conditions.',
-    solutions: 'Implemented adaptive Canny edge detection thresholds with automatic fallback heuristics.',
-    api: 'Local processing engine without external cloud network dependencies.',
-    security: '100% on-device processing guarantees privacy compliance.',
-    scalability: 'Independent local Android native execution.',
-    lessonsLearned: 'C++ native modules deliver 5x faster image processing than JavaScript threads.',
-    futureRoadmap: 'Add OCR text extraction support.',
-    deployment: 'Android APK build release.',
-    businessImpact: 'Provides zero-privacy-risk local document scanning with instant PDF generation.',
-    img: '/project/DigiScanner-app.png',
-    iconLists: [
-      '/icons/react.svg',
-      '/icons/ts.svg',
-      '/icons/git.svg',
-      '/icons/github.svg',
-    ],
-    link: 'https://github.com/sameer2210/DigiScanner',
-    github: 'https://github.com/sameer2210/DigiScanner',
-    category: 'Mobile App',
-  },
-];
-
 export const workExperience = [
   {
     id: 1,
@@ -643,7 +538,7 @@ export const socialMedia = [
   {
     id: 4,
     img: '/icons/insta.svg',
-    href: 'https://www.instagram.com/isameer_22',
+    href: 'https://www.instagram.com/sameerorigins',
     name: 'Instagram',
   },
   {
@@ -680,4 +575,88 @@ export const faqs = [
     answer:
       'Sameer Khan prioritizes Clean Architecture, modular micro-services/REST APIs, aggressive dynamic caching (Redis), optimized bundle splitting, server-side dynamic rendering (Next.js App Router), WCAG AA accessibility, and sub-second Core Web Vitals performance.',
   },
+];
+
+export const appProjects: ProjectDetail[] = [
+  {
+    id: 101,
+    slug: 'spandavidya-ai',
+    title: 'SpandaVidya AI',
+    des: 'AI-powered Ayurvedic Healthcare platform featuring chat-based Ayurvedic consultation and computer vision cataract detection.',
+    overview: 'Mobile application extension for SpandaVidya AI built with React Native for Android and iOS devices.',
+    problemStatement: 'Field health workers need a mobile native application capable of capturing high-quality ocular photos and operating in poor connectivity areas.',
+    architecture: 'React Native client with native bridge modules connecting to OpenCV PyTorch diagnostic APIs.',
+    databaseDesign: 'WatermelonDB / Async Storage local encrypted storage synced to MongoDB backend upon network reconnect.',
+    techStackDetailed: ['React Native', 'TypeScript', 'Nest.js', 'PostgreSQL', 'AWS S3', 'GCP'],
+    features: ['Camera-Based Ocular Scanning', 'AI Chat Consultation Interface', 'Offline Consultation History Storage'],
+    performanceMetrics: [{ label: 'App Size', value: '104MB' }, { label: 'Frame Rate', value: '60 FPS' }],
+    challenges: 'Capturing clear high-contrast ocular photos on varied mobile camera hardware.',
+    solutions: 'Built custom camera mask overlay with real-time brightness verification.',
+    api: 'REST API via HTTPS.',
+    security: 'Encrypted Async Storage and TLS 1.3 network communication.',
+    scalability: 'AWS auto-scaling container backend.',
+    lessonsLearned: 'Native camera overlays improve photo quality for AI vision models dramatically.',
+    futureRoadmap: 'Add offline model execution for basic cataract risk screening.',
+    deployment: 'Standalone APK & TestFlight iOS distribution.',
+    businessImpact: 'Allowed rural healthcare workers to conduct field screenings directly on smartphones.',
+    img: '/project/app/SpandaVidyaaiApp.png',
+    iconLists: ['/icons/react.svg', '/icons/ts.svg', '/icons/node.svg', '/icons/mongo.svg', '/icons/aws.svg', '/icons/git.svg', '/icons/github.svg'],
+    link: 'https://www.spandavidyaai.com/',
+    github: 'https://github.com/sameer2210/SpandaVidyaAi-App',
+    category: 'Mobile App'
+  },
+  {
+    id: 102,
+    slug: 'infantmind',
+    title: 'InfantMind',
+    des: 'AI-powered baby and early-life understanding platform analyzing cries and behaviors.',
+    overview: 'InfantMind uses advanced audio processing and AI models to help parents understand their baby\'s needs by analyzing cry patterns and early-life behaviors.',
+    problemStatement: 'New parents struggle to differentiate between various baby cries and identify specific needs quickly.',
+    architecture: 'React Native mobile application paired with a Python-based audio classification model on AWS.',
+    databaseDesign: 'MongoDB backend for user profiles and encrypted audio snippets.',
+    techStackDetailed: ['React Native', 'TypeScript', 'Python', 'AWS', 'TensorFlow'],
+    features: ['Real-time Cry Analysis', 'Behavior Tracking', 'Personalized Parenting Insights'],
+    performanceMetrics: [{ label: 'Prediction Accuracy', value: '92%' }, { label: 'Analysis Time', value: '< 1s' }],
+    challenges: 'Filtering out background noise from infant cries in real-time.',
+    solutions: 'Implemented a custom noise-cancellation pipeline before feeding audio into the classifier.',
+    api: 'RESTful API for data synchronization and audio uploads.',
+    security: 'Audio files are processed in memory and never persistently stored without consent.',
+    scalability: 'Serverless architecture for processing audio streams efficiently.',
+    lessonsLearned: 'On-device initial filtering reduces server load by 40%.',
+    futureRoadmap: 'Integration with smart nursery devices.',
+    deployment: 'Available on iOS and Android.',
+    businessImpact: 'Empowered thousands of parents with actionable insights during early parenthood.',
+    img: '/project/app/infantmindApp.png',
+    iconLists: ['/icons/react.svg', '/icons/ts.svg', '/icons/aws.svg'],
+    link: 'https://www.infantmind.ai/',
+    github: 'https://github.com/sameer2210/infantmind.ai',
+    category: 'Mobile App'
+  },
+  {
+    id: 103,
+    slug: 'digiscanner',
+    title: 'DigiScanner',
+    des: 'A powerful document scanning application. Capture, crop, and enhance documents seamlessly to digital format.',
+    overview: 'Android document scanning application enabling users to scan, perspective-correct, contrast-enhance, and compile documents into multi-page PDF files.',
+    problemStatement: 'Users need zero-privacy-risk document scanning that processes pages locally on-device without cloud upload dependencies.',
+    architecture: 'React Native application utilizing Android native C++ OpenCV image processing bindings.',
+    databaseDesign: 'Local File System PDF cache with SQLite metadata index.',
+    techStackDetailed: ['React Native', 'TypeScript', 'Android Native OpenCV', 'PDF Compiler Engine'],
+    features: ['Edge Detection & Perspective Crop Correction', 'Black & White Magic Color Filters', 'Multi-Page PDF Generation & Direct Share'],
+    performanceMetrics: [{ label: 'Processing Speed', value: '450ms / page' }, { label: 'PDF Compression', value: '70% smaller' }],
+    challenges: 'Real-time document edge detection under poor lighting conditions.',
+    solutions: 'Implemented adaptive Canny edge detection thresholds with automatic fallback heuristics.',
+    api: 'Local processing engine without external cloud network dependencies.',
+    security: '100% on-device processing guarantees privacy compliance.',
+    scalability: 'Independent local Android native execution.',
+    lessonsLearned: 'C++ native modules deliver 5x faster image processing than JavaScript threads.',
+    futureRoadmap: 'Add OCR text extraction support.',
+    deployment: 'Android APK build release.',
+    businessImpact: 'Provides zero-privacy-risk local document scanning with instant PDF generation.',
+    img: '/project/app/DigiScannerApp.png',
+    iconLists: ['/icons/react.svg', '/icons/ts.svg', '/icons/git.svg', '/icons/github.svg'],
+    link: 'https://github.com/sameer2210/DigiScanner',
+    github: 'https://github.com/sameer2210/DigiScanner',
+    category: 'Mobile App'
+  }
 ];

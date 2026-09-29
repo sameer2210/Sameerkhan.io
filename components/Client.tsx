@@ -31,7 +31,7 @@ const Clients = () => {
           className="h-[50vh] md:h-[30rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden"
         >
           {isInView ? (
-            <InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
+            <InfiniteMovingCards items={testimonials} direction="left" speed="slow" />
           ) : (
             <div className="text-sm text-white-100">Loading testimonials...</div>
           )}

@@ -31,11 +31,8 @@ const RecentProjects = dynamic(() => import("@/components/RecentProjects"), {
   loading: () => <ProjectsSkeleton />,
 });
 
-const AppProjects = dynamic(() => import("@/components/AppProjects"), {
-  loading: () => <ProjectsSkeleton />,
-});
 
-const Approach = dynamic(() => import("@/components/Approach"), {
+const Applications = dynamic(() => import("@/components/Applications"), {
   loading: () => <div className="py-20 h-64 animate-pulse" />,
 });
 
@@ -95,15 +92,11 @@ export default function HomeContent() {
         </Suspense>
       </Reveal>
 
-      <Reveal>
-        <Suspense fallback={<ProjectsSkeleton />}>
-          <AppProjects />
-        </Suspense>
-      </Reveal>
+
 
       <Reveal>
         <Suspense fallback={<div className="py-20 h-64" />}>
-          <Approach />
+          <Applications />
         </Suspense>
       </Reveal>
 
