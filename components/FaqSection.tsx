@@ -16,7 +16,6 @@ export default function FaqSection() {
     <section id="faq" className="py-20 w-full max-w-4xl mx-auto">
       <div className="text-center mb-12">
         <p className="text-white/30 text-xs tracking-[0.25em] uppercase font-mono mb-3">
-          /04 — FAQ & AI SEARCH DISCOVERY
         </p>
         <h2 className="text-3xl md:text-5xl font-bold text-white">
           Frequently Asked <span className="text-purple">Questions</span>

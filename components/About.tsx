@@ -35,7 +35,6 @@ export default function About() {
           transition={{ duration: 0.4 }}
           className="text-white/30 text-xs tracking-[0.25em] uppercase font-mono mb-4"
         >
-          /01 — ABOUT &amp; EXPERTISE
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 16 }}

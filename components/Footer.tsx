@@ -35,7 +35,7 @@ const Footer = () => {
           Whether you need a full-stack web application, high-performance REST API architecture, or mobile solution — let&apos;s build it together.
         </p>
         <a
-          href="mailto:sameerkhanorigin@gmail.com"
+           href="mailto:sameerkhan27560@gmail.com?subject=Software%20Development%20Inquiry&body=Hi%20Sameer,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20software%20development%20project%20with%20you.%0A%0AProject%20Details:%0A%0ARegards,"
           aria-label="Send an email to Sameer Khan"
           className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple rounded-lg"
         >

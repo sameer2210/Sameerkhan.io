@@ -571,11 +571,6 @@ export const socialMedia = [
 
 export const faqs = [
   {
-    question: 'Who is Sameer Khan?',
-    answer:
-      'Sameer Khan is a Full Stack Developer & Software Engineer based in Bhopal, Madhya Pradesh, India. He specializes in building scalable web and mobile applications using React, Next.js, Node.js, NestJS, Java, MERN Stack, React Native, TypeScript, PostgreSQL, MongoDB, Redis, Docker, and AWS.',
-  },
-  {
     question: 'What core technologies does Sameer Khan specialize in?',
     answer:
       'Sameer Khan specializes in Frontend technologies (React, Next.js, React Native, Redux Toolkit, Tailwind CSS, TypeScript), Backend frameworks (Node.js, Express.js, NestJS, Java), Databases & Caching (MongoDB, PostgreSQL, Redis, Prisma), and Cloud/DevOps tools (AWS, Docker, GitHub Actions, Vercel).',
