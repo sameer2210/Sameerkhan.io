@@ -226,8 +226,154 @@ export const projects: ProjectDetail[] = [
     github: 'https://github.com/sameer2210',
     category: 'Full Stack',
   },
-  {
+   {
     id: 3,
+    slug: 'aviyukt-ngo',
+    title: 'Aviyukt NGO',
+    des: 'Official NGO platform with Google OAuth, secure JWT sessions, and seamless Razorpay donation/membership payments. Features automated PDF receipts and Aadhaar verification.',
+    overview:
+      'Aviyukt NGO is a digital transformation platform for community welfare. It automates donation collections, membership registration, identity verification via Aadhaar API, and instant tax-deductible PDF receipt generation.',
+    problemStatement:
+      'NGOs suffer from high administrative overhead handling manual donation receipts, delayed identity verification for volunteer registrations, and drop-offs during unoptimized donation checkout flows.',
+    architecture:
+      'React Vite client communicating with Node.js Express backend, integrated with Razorpay Webhooks, Google OAuth 2.0, and automated PDF rendering services.',
+    databaseDesign:
+      'MongoDB schemas tracking Donors, Transactions, Memberships, and Verification Logs. Indexed on transaction IDs, donor emails, and payment statuses for financial reporting.',
+    techStackDetailed: [
+      'React & Vite',
+      'Node.js & Express.js',
+      'MongoDB & Mongoose',
+      'Razorpay Payment Gateway',
+      'Google OAuth 2.0',
+      'PDFKit Engine',
+    ],
+    features: [
+      'Razorpay Instant Payment Gateway & Subscription Webhooks',
+      'Automated Dynamic Tax-Exempt PDF Receipt Generation',
+      'Aadhaar KYC Identity Verification Integration',
+      'Google OAuth 2.0 & JWT Security',
+      'Admin Financial Analytics Dashboard',
+    ],
+    performanceMetrics: [
+      { label: 'Transaction Reliability', value: '99.99%' },
+      { label: 'PDF Generation', value: '< 300ms' },
+      { label: 'User Satisfaction', value: '100%' },
+      { label: 'Donors Onboarded', value: '5,000+' },
+    ],
+    challenges:
+      'Preventing double-spending or missed webhook notifications during peak campaign traffic spikes.',
+    solutions:
+      'Designed idempotent webhook processing handlers in Express with MongoDB transaction locking.',
+    api: 'REST API with HMAC-SHA256 signature verification for payment callback webhooks.',
+    security:
+      'HMAC-SHA256 signature verification on Razorpay payment callbacks, OAuth 2.0 identity checks, and strict sanitization of user data.',
+    scalability:
+      'Serverless function handlers and database connection pooling to handle unexpected donation campaign surges.',
+    lessonsLearned:
+      'Idempotency keys are mandatory when processing payment webhooks to prevent duplicate transaction recording.',
+    futureRoadmap:
+      'Integrate automated WhatsApp campaign notifications for donor thank-you messages.',
+    deployment: 'Vercel frontend hosting backed by Node.js production service instances.',
+    businessImpact: 'Streamlined donations for 5,000+ active contributors with automated instantaneous tax receipts.',
+    img: '/project/AviyuktNgo.png',
+    iconLists: [
+      '/icons/js.svg',
+      '/icons/react.svg',
+      '/icons/vite.svg',
+      '/icons/tail.svg',
+      '/icons/node.svg',
+      '/icons/express.svg',
+      '/icons/mongo.svg',
+      '/icons/postman.svg',
+      '/icons/Razorpay.svg',
+      '/icons/git.svg',
+      '/icons/github.svg',
+    ],
+    link: 'https://aviyuktngo.org/',
+    github: 'https://github.com/sameer2210',
+    category: 'Full Stack',
+  },
+    {
+  id: 4,
+  slug: 'passport-snap',
+  title: 'PassportSnap',
+  des: 'Offline-first privacy-focused web application for generating, adjusting, and printing passport and visa photos with all image processing performed locally in the browser.',
+  overview:
+    'PassportSnap is a client-side passport and visa photo workflow that automatically detects and centers faces, provides manual image adjustments, normalizes backgrounds locally with AI, and generates optimized print sheets without sending user images to a server.',
+  problemStatement:
+    'Traditional passport photo tools often require uploads, depend on server-side processing, have limited photo-size support, and make precise print-sheet preparation difficult while raising privacy concerns.',
+  architecture:
+    'Next.js App Router application using TypeScript and Tailwind CSS, with Zustand for application state, IndexedDB persistence for workspace data, MediaPipe for local face detection, and an ONNX/WASM-based background-removal pipeline running entirely in the browser.',
+  databaseDesign:
+    'Client-side IndexedDB storage using idb-keyval with custom Zustand persistence middleware for workspace/session data, without requiring a server-side application database.',
+  techStackDetailed: [
+    'Next.js App Router',
+    'TypeScript',
+    'Tailwind CSS v4',
+    'Zustand',
+    'IndexedDB',
+    'MediaPipe Face Detector',
+    '@imgly/background-removal',
+    'ONNX / WASM',
+    'jsPDF',
+  ],
+  features: [
+    'Automatic Face Detection, Centering & Passport Ratio Cropping',
+    'Brightness, Contrast, Zoom, Pan, Rotation & Image Sharpening',
+    'Local AI Background Removal with White, Light Blue, Original & Custom Backgrounds',
+    'Multi-Country Passport Photo Size Presets with Custom Millimeter Dimensions',
+    'Automatic A4, A5, 3R, 4R & 5R Print Sheet Tiling',
+    'Manual Grid Slot Control, Copy Management & Print-Safe Gutters',
+    'High-Quality PDF, JPG and PNG Export with Direct Browser Printing',
+    'Offline PWA Support with Local Models and Workspace Reset',
+  ],
+  performanceMetrics: [
+    {
+      label: 'Image Processing',
+      value: 'Client-side',
+    },
+    {
+      label: 'Background Processing',
+      value: 'Local ONNX/WASM',
+    },
+    {
+      label: 'Print Resolution',
+      value: '300 DPI',
+    },
+  ],
+  challenges:
+    'Processing large images, AI background removal, canvas operations, and repeated print-layout generation in the browser while preventing excessive memory consumption and maintaining responsive editing performance.',
+  solutions:
+    'Implemented strict object URL lifecycle management, temporary canvas cleanup, ImageBitmap disposal, local caching of transparent cutouts, IndexedDB persistence, and reusable registry-driven print calculations to minimize repeated processing and memory usage.',
+  api:
+    'The core photo-processing workflow does not require a backend API. Face detection, background isolation, image transformations, and print generation execute locally in the browser.',
+  security:
+    'Designed as a privacy-first client-side application where user photos remain in the browser. No server upload is required for the core processing workflow, reducing exposure of biometric image data.',
+  scalability:
+    'Client-side processing removes server image-processing costs and allows the application to scale primarily through static application delivery rather than backend compute resources.',
+  lessonsLearned:
+    'Building image-intensive browser applications requires disciplined memory management, deterministic physical-dimension calculations, local model caching, and separation of reusable image-processing and print-engine logic from UI components.',
+  futureRoadmap:
+    'Add multi-subject batching, offline biometric quality checks such as eye-open and symmetry detection, and advanced print cutline styles including bleed lines, scissor paths, and crop marks.',
+  deployment:
+    'Next.js application designed for production deployment as a privacy-focused web application with offline/PWA capabilities.',
+  businessImpact:
+    'Provides a low-cost, privacy-oriented workflow for creating compliant passport and visa photo sheets without requiring server-side image processing or paid backend infrastructure.',
+  img: '/project/PassportSnap.png',
+  iconLists: [
+    '/icons/next.svg',
+    '/icons/ts.svg',
+    '/icons/tail.svg',
+    '/icons/zustand.svg',
+    '/icons/mediapipe.svg',
+    '/icons/github.svg',
+  ],
+  link: 'https://passport-snap.vercel.app/',
+  github: 'https://github.com/sameer2210/PassPort-Snap',
+  category: 'Full Stack',
+},
+  {
+    id: 5,
     slug: 'filehive',
     title: 'FileHive',
     des: 'AES-256 encrypted cloud storage platform with nested folder management and Redis-powered caching. Containerized with Docker and deployed via GitHub Actions CI/CD.',
@@ -296,75 +442,9 @@ export const projects: ProjectDetail[] = [
     github: 'https://github.com/sameer2210',
     category: 'Cloud Storage',
   },
+
   {
-    id: 4,
-    slug: 'aviyukt-ngo',
-    title: 'Aviyukt NGO',
-    des: 'Official NGO platform with Google OAuth, secure JWT sessions, and seamless Razorpay donation/membership payments. Features automated PDF receipts and Aadhaar verification.',
-    overview:
-      'Aviyukt NGO is a digital transformation platform for community welfare. It automates donation collections, membership registration, identity verification via Aadhaar API, and instant tax-deductible PDF receipt generation.',
-    problemStatement:
-      'NGOs suffer from high administrative overhead handling manual donation receipts, delayed identity verification for volunteer registrations, and drop-offs during unoptimized donation checkout flows.',
-    architecture:
-      'React Vite client communicating with Node.js Express backend, integrated with Razorpay Webhooks, Google OAuth 2.0, and automated PDF rendering services.',
-    databaseDesign:
-      'MongoDB schemas tracking Donors, Transactions, Memberships, and Verification Logs. Indexed on transaction IDs, donor emails, and payment statuses for financial reporting.',
-    techStackDetailed: [
-      'React & Vite',
-      'Node.js & Express.js',
-      'MongoDB & Mongoose',
-      'Razorpay Payment Gateway',
-      'Google OAuth 2.0',
-      'PDFKit Engine',
-    ],
-    features: [
-      'Razorpay Instant Payment Gateway & Subscription Webhooks',
-      'Automated Dynamic Tax-Exempt PDF Receipt Generation',
-      'Aadhaar KYC Identity Verification Integration',
-      'Google OAuth 2.0 & JWT Security',
-      'Admin Financial Analytics Dashboard',
-    ],
-    performanceMetrics: [
-      { label: 'Transaction Reliability', value: '99.99%' },
-      { label: 'PDF Generation', value: '< 300ms' },
-      { label: 'User Satisfaction', value: '100%' },
-      { label: 'Donors Onboarded', value: '5,000+' },
-    ],
-    challenges:
-      'Preventing double-spending or missed webhook notifications during peak campaign traffic spikes.',
-    solutions:
-      'Designed idempotent webhook processing handlers in Express with MongoDB transaction locking.',
-    api: 'REST API with HMAC-SHA256 signature verification for payment callback webhooks.',
-    security:
-      'HMAC-SHA256 signature verification on Razorpay payment callbacks, OAuth 2.0 identity checks, and strict sanitization of user data.',
-    scalability:
-      'Serverless function handlers and database connection pooling to handle unexpected donation campaign surges.',
-    lessonsLearned:
-      'Idempotency keys are mandatory when processing payment webhooks to prevent duplicate transaction recording.',
-    futureRoadmap:
-      'Integrate automated WhatsApp campaign notifications for donor thank-you messages.',
-    deployment: 'Vercel frontend hosting backed by Node.js production service instances.',
-    businessImpact: 'Streamlined donations for 5,000+ active contributors with automated instantaneous tax receipts.',
-    img: '/project/AviyuktNgo.png',
-    iconLists: [
-      '/icons/js.svg',
-      '/icons/react.svg',
-      '/icons/vite.svg',
-      '/icons/tail.svg',
-      '/icons/node.svg',
-      '/icons/express.svg',
-      '/icons/mongo.svg',
-      '/icons/postman.svg',
-      '/icons/Razorpay.svg',
-      '/icons/git.svg',
-      '/icons/github.svg',
-    ],
-    link: 'https://aviyuktngo.org/',
-    github: 'https://github.com/sameer2210',
-    category: 'Full Stack',
-  },
-  {
-    id: 5,
+    id: 6,
     slug: 'elite-ecommerce',
     title: 'ÉLITE E-Commerce',
     des: 'Modern full-stack e-commerce platform with smart filters, cart flow, and secure JWT authentication. Includes admin product management and scalable Redux architecture.',
@@ -429,67 +509,7 @@ export const projects: ProjectDetail[] = [
     github: 'https://github.com/sameer2210',
     category: 'Full Stack',
   },
-  {
-    id: 6,
-    slug: 'eato-recipe-app',
-    title: 'Eato Recipe App',
-    des: 'Delightful recipe web application to discover, create, and manage your favorite dishes with ease. Crafted with modern React tooling and smooth Framer Motion animations.',
-    overview:
-      'Eato is an intuitive culinary discovery web app enabling food enthusiasts to search, filter by nutritional profile, publish custom recipes, and bookmark meal ideas.',
-    problemStatement:
-      'Recipe websites are usually cluttered with ad popups, slow loading scripts, and cumbersome navigation.',
-    architecture:
-      'Vite React client utilizing Context API and Framer Motion layout animations, consuming third-party culinary REST APIs.',
-    databaseDesign:
-      'Client-side LocalStorage cache for offline bookmarks paired with RESTful JSON schemas.',
-    techStackDetailed: [
-      'React & Vite',
-      'Redux Toolkit',
-      'Framer Motion',
-      'Tailwind CSS',
-      'REST API Integration',
-    ],
-    features: [
-      'Interactive Recipe Search & Dietary Filter Engine',
-      'Smooth Layout Transitions & Responsive Cards',
-      'Custom Recipe Creator & Local Storage Bookmark Manager',
-      'Nutritional Breakdown Visualization',
-    ],
-    performanceMetrics: [
-      { label: 'Lighthouse Performance', value: '100/100' },
-      { label: 'First Contentful Paint', value: '0.6s' },
-      { label: 'Accessibility Score', value: '100/100' },
-    ],
-    challenges:
-      'Ensuring smooth 60fps animations during heavy list filtering on budget mobile browsers.',
-    solutions:
-      'Leveraged Framer Motion layout animations hardware accelerated via CSS transform properties.',
-    api: 'Consumes RESTful meal database APIs with client-side response caching.',
-    security:
-      'Input sanitization on custom recipe form creation to prevent XSS script injection.',
-    scalability:
-      'Static asset delivery via Vercel global CDN with zero server runtime overhead.',
-    lessonsLearned:
-      'Using CSS hardware-accelerated transforms for animations guarantees 60fps frame rates on low-end devices.',
-    futureRoadmap:
-      'Add grocery shopping list generator with export to PDF feature.',
-    deployment: 'Static Single-Page Application deployed on Vercel.',
-    businessImpact: 'Achieved 100/100 Lighthouse performance and accessibility scores with high user engagement.',
-    img: '/project/infantmind.png',
-    iconLists: [
-      '/icons/js.svg',
-      '/icons/react.svg',
-      '/icons/vite.svg',
-      '/icons/redux.svg',
-      '/icons/fm.svg',
-      '/icons/tail.svg',
-      '/icons/git.svg',
-      '/icons/github.svg',
-    ],
-    link: 'https://www.infantmind.ai/',
-    github: 'https://github.com/sameer2210/infantmind.ai',
-    category: 'Full Stack',
-  },
+
 ];
 
 export const workExperience = [
