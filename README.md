@@ -1,127 +1,132 @@
 <p align="center">
-  <img src="/public/Banner.png" width="200" alt="Portfolio Banner" />
+  <img src="public/sameer-pic.jpg" width="160" alt="Sameer Khan, Full-Stack Developer" />
 </p>
 
-#  Sameer’s Developer Portfolio
+<h1 align="center">Sameer Khan | Full-Stack Developer Portfolio</h1>
 
-Welcome to my interactive portfolio! Built with Next.js, Three.js, Framer Motion, and Tailwind CSS, this project showcases my skills, projects, and experience in a visually engaging and modern way.
+<p align="center">
+  <strong>Full-Stack Developer • MERN Stack • Next.js • React Native • Node.js</strong>
+</p>
 
+<p align="center">
+  <a href="https://sameerkhan-io.vercel.app/">Live Portfolio</a> ·
+  <a href="https://github.com/sameer2210">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/sameer2210/">LinkedIn</a> ·
+  <a href="https://www.youtube.com/channel/UCkJWIW5koQOLwPgdE25p6jg">YouTube</a>
+</p>
 
-## 🌐 Demo
+# About this project
 
-**Live Site:** [https://sameerkhan-io.vercel.app/]()
----
+This repository contains **Sameer Khan's developer portfolio**, presenting full-stack development projects, technical skills, work experience, and contact links. The portfolio is built with Next.js, React, TypeScript, Tailwind CSS, Three.js, and Framer Motion.
 
-## 📋 Table of Contents
+If you're looking for Sameer Khan, a Full-Stack Developer specializing in MERN, React, Next.js, Node.js, Express.js, MongoDB, REST APIs, React Native, and interactive web experiences, this repository showcases selected work and project details.
 
-1. [Introduction](#introduction)
-2. [Demo](#demo)
-3. [Tech Stack](#tech-stack)
-4. [Features](#features)
-5. [Screenshots](#screenshots)
-6. [Recent Projects](#recent-projects)
-7. [Work Experience](#work-experience)
-8. [Getting Started](#getting-started)
-9. [Folder Structure](#folder-structure)
-10. [Contribution](#contribution)
-11. [License](#license)
-12. [Contact & Socials](#contact--socials)
+## Live Demo
 
----
+**Website:** [sameerkhan-io.vercel.app](https://sameerkhan-io.vercel.app/)
 
-## 🤖 Introduction
+## Tech Stack
 
-This portfolio is designed to highlight my technical expertise, creative approach, and professional journey. It features:
+- **Framework:** Next.js 14, React, TypeScript
+- **Frontend:** Tailwind CSS, Framer Motion
+- **3D and visual effects:** Three.js, React Three Fiber
+- **UI and icons:** React Icons, Tabler Icons
+- **Deployment:** Vercel
 
-- Interactive 3D elements
-- Modern UI/UX
-- Responsive design
-- Real project showcases
+## Features
 
+- Responsive portfolio layout
+- Animated hero and interactive visual effects
+- Bento-grid sections for skills and professional highlights
+- Project showcases with technologies and links
+- Work experience and testimonials
+- Contact and social profile links
+- Reusable React components and TypeScript data structures
 
----
+## Featured Work
 
-## ⚙️ Tech Stack
+The portfolio includes project showcases such as:
 
-- **Framework:** Next.js
-- **3D & Animation:** Three.js, Framer Motion
-- **Styling:** Tailwind CSS
-- **Other:** TypeScript, React Icons
+- **SpandaVidya AI** — AI-powered Ayurvedic wellness platform and mobile app
+- **CodeX** — Real-time collaborative coding environment
+- **FileHive** — Cloud file storage project
+- **PassportSnap** — Browser-based passport and visa photo workflow
+- **Aviyukt NGO** — NGO platform with donation-related features
+- **InfantMind** — Baby and early-life support application
 
----
+See the [live portfolio](https://sameerkhan-io.vercel.app/) for current descriptions and links.
 
-## 🔋 Features
+## Work Experience
 
-- **Hero Section:** Spotlight effect, dynamic backgrounds
-- **Bento Grid:** Modern, responsive layout for personal info
-- **3D Elements:** Interactive globe, card hover effects
-- **Testimonials:** Animated, dynamic testimonials
-- **Work Experience:** Timeline and highlights
-- **Canvas Effects:** Custom HTML5 canvas visuals
-- **Recent Projects:** Showcases with live links and tech icons
-- **Fully Responsive:** Mobile-first, works on all devices
-- **Reusable Components:** Modular, clean codebase
+- **MERN & React Native Developer — Optico Solutions Pvt. Ltd.**
+- Full-stack development training at Sheryians Pvt. Ltd.
+- Freelance and personal full-stack application projects
 
+For the most current experience details, refer to the portfolio and LinkedIn profile.
 
-## 💼 Work Experience
-
-- **React Library:** Developed `react-infinite-scroller` for horizontal logo animations (in progress)
-- **Freelance Project:** Delivered custom web solutions for clients
-- **AR Web App:** Built AR-based web app for client machine presentations (NDA signed)
-
----
-
-##  Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- [Git](https://github.com/sameer2210)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (or yarn/pnpm/bun)
+- [Node.js](https://nodejs.org/)
+- npm (included with Node.js), or another supported package manager
+- Git
 
 ### Installation
 
+Clone this repository and install dependencies:
+
 ```bash
-git clone https://github.com/sameer2210/Portfolio.git
-cd Portfolio
+git clone https://github.com/sameer2210/Sameerkhan.io.git
+cd Sameerkhan.io
 npm install
 ```
 
-### Running Locally
+### Run locally
 
 ```bash
 npm run dev
-# or
-
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
----
+### Production build
 
-## 🤝 Contribution
+```bash
+npm run build
+npm start
+```
 
-Contributions, issues, and feature requests are welcome! Feel free to fork the repo and submit a pull request.
+## Repository Structure
 
----
+```text
+components/   Reusable React UI components
+data/         Portfolio content and project data
+public/       Static images, icons, and other public assets
+app/          Application routes, if present in this project
+```
 
-## 📄 License
+Actual routes and components may evolve as the project develops.
 
-This project is open source and available under the [MIT License](LICENSE).
+## SEO and Search Visibility
 
----
+This README uses descriptive, relevant terms such as **Sameer Khan**, **Full-Stack Developer**, **MERN Stack Developer**, **React Developer**, **Next.js**, **Node.js**, and **React Native** to help search engines and visitors understand the repository.
 
-## 📬 Contact & Socials
+A README update alone cannot guarantee that this repository will rank first in Google or other search results for your name or profession. Search position depends on many factors and changes over time. To improve discoverability, keep your GitHub profile, repository description and topics, LinkedIn, and portfolio metadata consistent, and link to this repository from your public profiles.
 
-- **GitHub:** [sameer2210](https://github.com/sameer2210)
-- **Twitter (X):** [@Sameer2210\_](https://x.com/Sameerorigins)
-- **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/sameer2210/)
-- **Email:** sameerkhanorigin@gmail.com
+## Contact and Socials
 
----
+- **Portfolio:** [sameerkhan-io.vercel.app](https://sameerkhan-io.vercel.app/)
+- **GitHub:** [@sameer2210](https://github.com/sameer2210)
+- **LinkedIn:** [Sameer Khan](https://www.linkedin.com/in/sameer2210/)
+- **YouTube:** [Sameer Khan's YouTube Channel](https://www.youtube.com/channel/UCkJWIW5koQOLwPgdE25p6jg)
+- **X:** [@Sameerorigins](https://x.com/Sameerorigins)
+- **Email:** [sameerkhanorigin@gmail.com](mailto:sameerkhanorigin@gmail.com)
 
-> _Thank you for visiting my portfolio!_
+## Contributing
+
+Suggestions, issues, and pull requests are welcome.
+
+## License
+
+This project is distributed under the MIT License. See [LICENSE](LICENSE) for details.
