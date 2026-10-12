@@ -546,7 +546,7 @@ export const socialMedia = [
   {
     id: 2,
     img: '/icons/twit.svg',
-    href: 'https://x.com/Sameer2210_',
+    href: 'https://x.com/Sameerorigins',
     name: 'Twitter (X)',
   },
   {

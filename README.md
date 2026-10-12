@@ -118,7 +118,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📬 Contact & Socials
 
 - **GitHub:** [sameer2210](https://github.com/sameer2210)
-- **Twitter (X):** [@Sameer2210\_](https://x.com/Sameer2210_)
+- **Twitter (X):** [@Sameer2210\_](https://x.com/Sameerorigins)
 - **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/sameer2210/)
 - **Email:** sameerkhanorigin@gmail.com
 
