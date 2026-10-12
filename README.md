@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/Banner.png" width="200" alt="Sameer Khan developer portfolio banner" />
+  <img src="public/sameer-pic.jpg" width="160" alt="Sameer Khan, Full-Stack Developer" />
 </p>
 
 <h1 align="center">Sameer Khan | Full-Stack Developer Portfolio</h1>
